@@ -996,6 +996,382 @@
 
 **[⬆ back to top](#table-of-contents)**
 
+## Type Casting & Coercion
+
+  - Perform type coercion at the beginning of the statement.
+  - Strings:
+
+    ```javascript
+    //  => this.reviewScore = 9;
+
+    // bad
+    var totalScore = this.reviewScore + '';
+
+    // good
+    var totalScore = '' + this.reviewScore;
+
+    // bad
+    var totalScore = '' + this.reviewScore + ' total score';
+
+    // good
+    var totalScore = this.reviewScore + ' total score';
+    ```
+
+  - Use `parseInt` for Numbers and always with a radix for type casting.
+
+    ```javascript
+    var inputValue = '4';
+
+    // bad
+    var val = new Number(inputValue);
+
+    // bad
+    var val = +inputValue;
+
+    // bad
+    var val = inputValue >> 0;
+
+    // bad
+    var val = parseInt(inputValue);
+
+    // good
+    var val = Number(inputValue);
+
+    // good
+    var val = parseInt(inputValue, 10);
+    ```
+
+  - If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
+
+    ```javascript
+    // good
+    /**
+     * parseInt was the reason my code was slow.
+     * Bitshifting the String to coerce it to a
+     * Number made it a lot faster.
+     */
+    var val = inputValue >> 0;
+    ```
+
+  - **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](http://es5.github.io/#x4.3.19), but Bitshift operations always return a 32-bit integer ([source](http://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
+
+    ```javascript
+    2147483647 >> 0 //=> 2147483647
+    2147483648 >> 0 //=> -2147483648
+    2147483649 >> 0 //=> -2147483647
+    ```
+
+  - Booleans:
+
+    ```javascript
+    var age = 0;
+
+    // bad
+    var hasAge = new Boolean(age);
+
+    // good
+    var hasAge = Boolean(age);
+
+    // good
+    var hasAge = !!age;
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Naming Conventions
+
+  - Avoid single letter names. Be descriptive with your naming. Note: During minification, these will be shortened for production via [UglifyJS](https://github.com/mishoo/UglifyJS2)
+
+    ```javascript
+    // bad
+    function q() {
+      // ...stuff...
+    }
+
+    // good
+    function query() {
+      // ..stuff..
+    }
+    ```
+
+  - Use camelCase when naming objects, functions, and instances.
+
+    ```javascript
+    // bad
+    var OBJEcttsssss = {};
+    var this_is_my_object = {};
+    var o = {};
+    function c() {}
+
+    // good
+    var thisIsMyObject = {};
+    function thisIsMyFunction() {}
+    ```
+
+  - Use PascalCase when naming constructors or classes.
+
+    ```javascript
+    // bad
+    function user(options) {
+      this.name = options.name;
+    }
+
+    var bad = new user({
+      name: 'nope'
+    });
+
+    // good
+    function User(options) {
+      this.name = options.name;
+    }
+
+    var good = new User({
+      name: 'yup'
+    });
+    ```
+
+  - Use a leading underscore `_` when naming private properties.
+
+    ```javascript
+    // bad
+    this.__firstName__ = 'Panda';
+    this.firstName_ = 'Panda';
+
+    // good
+    this._firstName = 'Panda';
+    ```
+
+  - When saving a reference to `this` use `self`.
+
+    ```javascript
+    // bad
+    function () {
+      var self = this;
+      return function () {
+        console.log(self);
+      };
+    }
+
+    // bad
+    function () {
+      var that = this;
+      return function () {
+        console.log(that);
+      };
+    }
+
+    // good
+    function () {
+      var _this = this;
+      return function () {
+        console.log(_this);
+      };
+    }
+    ```
+
+  - Name your functions. This is helpful for stack traces.
+
+    ```javascript
+    // bad
+    var log = function (msg) {
+      console.log(msg);
+    };
+
+    // good
+    var log = function log(msg) {
+      console.log(msg);
+    };
+    ```
+
+  - **Note:** IE8 and below exhibit some quirks with named function expressions.  See [http://kangax.github.io/nfe/](http://kangax.github.io/nfe/) for more info.
+
+  - If your file exports a single class, your filename should be exactly the name of the class.
+    ```javascript
+    // file contents
+    class CheckBox {
+      // ...
+    }
+    module.exports = CheckBox;
+
+    // in some other file
+    // bad
+    var CheckBox = require('./checkBox');
+
+    // bad
+    var CheckBox = require('./check_box');
+
+    // good
+    var CheckBox = require('./CheckBox');
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Accessors
+
+  - Accessor functions for properties are not required.
+  - If you do make accessor functions use getVal() and setVal('hello').
+
+    ```javascript
+    // bad
+    dragon.age();
+
+    // good
+    dragon.getAge();
+
+    // bad
+    dragon.age(25);
+
+    // good
+    dragon.setAge(25);
+    ```
+
+  - If the property is a boolean, use isVal() or hasVal().
+
+    ```javascript
+    // bad
+    if (!dragon.age()) {
+      return false;
+    }
+
+    // good
+    if (!dragon.hasAge()) {
+      return false;
+    }
+    ```
+
+  - It's okay to create get() and set() functions, but be consistent.
+
+    ```javascript
+    function Jedi(options) {
+      options || (options = {});
+      var lightsaber = options.lightsaber || 'blue';
+      this.set('lightsaber', lightsaber);
+    }
+
+    Jedi.prototype.set = function set(key, val) {
+      this[key] = val;
+    };
+
+    Jedi.prototype.get = function get(key) {
+      return this[key];
+    };
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Constructors
+
+  - Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
+
+    ```javascript
+    function Jedi() {
+      console.log('new jedi');
+    }
+
+    // bad
+    Jedi.prototype = {
+      fight: function fight() {
+        console.log('fighting');
+      },
+
+      block: function block() {
+        console.log('blocking');
+      }
+    };
+
+    // good
+    Jedi.prototype.fight = function fight() {
+      console.log('fighting');
+    };
+
+    Jedi.prototype.block = function block() {
+      console.log('blocking');
+    };
+    ```
+
+  - Methods can return `this` to help with method chaining.
+
+    ```javascript
+    // bad
+    Jedi.prototype.jump = function jump() {
+      this.jumping = true;
+      return true;
+    };
+
+    Jedi.prototype.setHeight = function setHeight(height) {
+      this.height = height;
+    };
+
+    var luke = new Jedi();
+    luke.jump(); // => true
+    luke.setHeight(20); // => undefined
+
+    // good
+    Jedi.prototype.jump = function jump() {
+      this.jumping = true;
+      return this;
+    };
+
+    Jedi.prototype.setHeight = function setHeight(height) {
+      this.height = height;
+      return this;
+    };
+
+    var luke = new Jedi();
+
+    luke.jump()
+      .setHeight(20);
+    ```
+
+
+  - It's okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
+
+    ```javascript
+    function Jedi(options) {
+      options || (options = {});
+      this.name = options.name || 'no name';
+    }
+
+    Jedi.prototype.getName = function getName() {
+      return this.name;
+    };
+
+    Jedi.prototype.toString = function toString() {
+      return 'Jedi - ' + this.getName();
+    };
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Events
+
+  - When attaching data payloads to events (whether DOM events or something more proprietary), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
+
+    ```js
+    // bad
+    $(this).trigger('listingUpdated', listing.id);
+
+    ...
+
+    $(this).on('listingUpdated', function (e, listingId) {
+      // do something with listingId
+    });
+    ```
+
+    prefer:
+
+    ```js
+    // good
+    $(this).trigger('listingUpdated', { listingId : listing.id });
+
+    ...
+
+    $(this).on('listingUpdated', function (e, data) {
+      // do something with data.listingId
+    });
+    ```
+
+**[⬆ back to top](#table-of-contents)**
 
 
 # };
