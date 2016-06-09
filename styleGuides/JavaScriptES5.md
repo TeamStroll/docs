@@ -1,5 +1,6 @@
 # Stroll JavaScript ES5 Style Guide () {
 *A somewhat reasonable-ish approach to JavaScript*
+
 *Praying to move to ES6 once we don't have to support IE8*
 
 ## Table of Contents
@@ -1548,7 +1549,7 @@
 ## Additional Notes
 
   - Once we are able to ditch IE8 and lower IE support and can move into ES6 some of this style guide will become obsolete and be superceded by an ES6 style guide.
-  - For understanding the differences between [ES5 and ES6](http://es6-features.org/) 
+  - For understanding the differences between [ES5 and ES6](http://es6-features.org/)
 
 ## License
 

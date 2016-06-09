@@ -2,4 +2,5 @@
 
 ## Style Guides
   - JavaScript
-    - [ECMAScript5](../styleGuides/JavaScriptES5.md)
+    - [ECMAScript 5](../styleGuides/JavaScriptES5)
+  - [React](../styleGuides/ReactJSX)
