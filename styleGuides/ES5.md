@@ -448,20 +448,22 @@
       console.log(notDefined); // => throws a ReferenceError
     };
 
-    /* creating a variable declaration after you
-    *  reference the variable will work due to
-    *  variable hoisting.  Note: the assignment
-    *  value of `true` is not hoisted.
-    */
+    /**
+     * creating a variable declaration after you
+     *  reference the variable will work due to
+     *  variable hoisting.  Note: the assignment
+     *  value of `true` is not hoisted.
+     */
     function example () {
       console.log(declaredButNotAssigned); // => undefined
       var declaredButNotAssigned = true;
     };
 
-    /* The interpreter is hoisting the variable
-    *  declaration to the top of the scope,
-    *  which means our example could be rewritten as:
-    */
+    /**
+     * The interpreter is hoisting the variable
+     *  declaration to the top of the scope,
+     *  which means our example could be rewritten as:
+     */
     function example () {
       var declaredButNotAssigned;
       console.log(declaredButNotAssigned); // => undefined
@@ -525,5 +527,380 @@
   - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
 
 **[⬆ back to top](#table-of-contents)**
+
+## Comparison Operators & Equality
+
+  - Use `===` and `!==` over `==` and `!=`.
+  - Conditional statements such as the `if` statement evaluate their expression using coercion with the `ToBoolean` abstract method and always follow these simple rules:
+
+    + **Objects** evaluate to **true**
+    + **Undefined** evaluates to **false**
+    + **Null** evaluates to **false**
+    + **Booleans** evaluate to **the value of the boolean**
+    + **Numbers** evaluate to **false** if **+0, -0, 0, NaN**, otherwise **true**
+    + **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+
+    ```javascript
+    if ([0]) {
+      // true
+      // An array is an object, objects evaluate to true
+    };
+    ```
+
+  - Use shortcuts.
+
+    ```javascript
+    // bad
+    if (name !== '') {
+      // ...stuff...
+    }
+
+    // good
+    if (name) {
+      // ...stuff...
+    }
+
+    // bad
+    if (collection.length > 0) {
+      // ...stuff...
+    }
+
+    // good
+    if (collection.length) {
+      // ...stuff...
+    }
+    ```
+
+  - For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
+
+**[⬆ back to top](#table-of-contents)**
+
+## Blocks
+
+  - Use braces with all multi-line blocks.
+
+    ```javascript
+    // bad
+    if (test)
+      return false;
+
+    // good
+    if (test) return false;
+
+    // good
+    if (test) {
+      return false;
+    }
+
+    // bad
+    function () { return false; }
+
+    // good
+    function () {
+      return false;
+    }
+    ```
+
+  - If you're using multi-line blocks with `if` and `else`, put `else` on the same line as your `if` block's closing brace.
+
+    ```javascript
+    // bad
+    if (test) {
+      thing1();
+      thing2();
+    }
+    else {
+      thing3();
+    }
+
+    // good
+    if (test) {
+      thing1();
+      thing2();
+    } else {
+      thing3();
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Comments
+
+  - Use `/** ... */` for multi-line comments.  Include a description, specify types and values for all parameters and return values.
+
+    ```javascript
+    // bad
+    // make() returns a new element
+    // based on the passed in tag name
+    //
+    // @param {String} tag
+    // @return {Element} element
+    function make (tag) {
+      // ...stuff...
+
+      return element;
+    };
+
+    // good
+    /**
+     * make() returns a new element
+     * based on the passed in tag name
+     *
+     * @param {String} tag
+     * @return {Element} element
+     */
+    function make (tag) {
+      // ...stuff...
+
+      return element;
+    };
+    ```
+
+  - Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.
+
+    ```javascript
+    // bad
+    var active = true; // is current tab
+
+    // good
+    // is current tab
+    var active = true;
+
+    // bad
+    function getType () {
+      console.log('fetching type...');
+      // set the default type to 'no type'
+      var type = this._type || 'no type';
+
+      return type;
+    };
+
+    // good
+    function getType () {
+      console.log('fetching type...');
+
+      // set the default type to 'no type'
+      var type = this._type || 'no type';
+
+      return type;
+    };
+    ```
+
+  - Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
+
+    - Use `// FIXME:` to anotate problems.
+
+      ```javascript
+      function Calculator () {
+
+        // FIXME: shouldn't use a global here
+        total = 0;
+
+        return this;
+      };
+      ```
+
+    - Use `TODO:` to annotate solutions to problems.
+
+      ```javascript
+      function Calculator () {
+
+        // TODO: total should be configurable by an options param
+        this.total = 0;
+
+        return this;
+      };
+      ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Whitespace
+
+  - Use soft tabs set to 2 spaces.
+
+    ```javascript
+    // bad
+    function () {
+    ∙∙∙∙var name;
+    };
+
+    // bad
+    function () {
+    ∙var name;
+    };
+
+    // good
+    function () {
+    ∙∙var name;
+    };
+    ```
+
+  - Place 1 space before the leading brace.
+
+    ```javascript
+    // bad
+    function test (){
+      console.log('test');
+    };
+
+    // good
+    function test () {
+      console.log('test');
+    };
+
+    // bad
+    dog.set('attr',{
+      age: '1 year',
+      breed: 'Catahoula'
+    });
+
+    // good
+    dog.set('attr', {
+      age: '1 year',
+      breed: 'Catahoula'
+    });
+    ```
+
+  - Place 1 space before specifying function argument list in function calls and declarations.
+
+    ```javascript
+    // bad
+    function starWars(movie) {
+      return [4,5,6].indexOf(movie.id > -1) ? 'Good' : 'Bad';
+    };
+
+    // good
+    function starWars (movie) {
+      return [4,5,6].indexOf(movie.id > -1) ? 'Good' : 'Bad';
+    };
+    ```
+
+  - Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.).
+
+    ```javascript
+    // bad
+    if(isJedi) {
+      fight ();
+    }
+
+    // good
+    if (isJedi) {
+      fight();
+    }
+    ```
+
+  - Set off operators with spaces.
+
+    ```javascript
+    // bad
+    var x=y+5;
+
+    // good
+    var x = y + 5;
+    ```
+
+  - End files with a single newline character.
+
+    ```javascript
+    // bad
+    (function (global) {
+      // ...stuff...
+    })(this);
+    ```
+
+    ```javascript
+    // bad
+    (function (global) {
+      // ...stuff...
+    })(this);↵
+    ↵
+    ```
+
+    ```javascript
+    // good
+    (function (global) {
+      // ...stuff...
+    })(this);↵
+    ```
+
+  - Use indentation when making long method chains. Use a leading dot, which
+    emphasizes that the line is a method call, not a new statement.
+
+      ```javascript
+      // bad
+      $('#items').find('.selected').highlight().end().find('.open').updateCount();
+
+      // bad
+      $('#items').
+        find('.selected').
+          highlight().
+          end().
+        find('.open').
+          updateCount();
+
+      // good
+      $('#items')
+        .find('.selected')
+          .highlight()
+          .end()
+        .find('.open')
+          .updateCount();
+
+      // bad
+      var leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
+          .attr('width', (radius + margin) * 2).append('svg:g')
+          .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+          .call(tron.led);
+
+      // good
+      var leds = stage.selectAll('.led')
+          .data(data)
+        .enter().append('svg:svg')
+          .classed('led', true)
+          .attr('width', (radius + margin) * 2)
+        .append('svg:g')
+          .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+          .call(tron.led);
+      ```
+
+  - Leave a blank line after blocks and before the next statement
+
+      ```javascript
+      // bad
+      if (foo) {
+        return bar;
+      }
+      return baz;
+
+      // good
+      if (foo) {
+        return bar;
+      }
+
+      return baz;
+
+      // bad
+      var obj = {
+        foo: function () {
+        },
+        bar: function () {
+        }
+      };
+      return obj;
+
+      // good
+      var obj = {
+        foo: function () {
+        },
+
+        bar: function () {
+        }
+      };
+
+      return obj;
+      ```
+
+**[⬆ back to top](#table-of-contents)**
+
 
 # };
