@@ -57,48 +57,48 @@
 
   - Use the literal syntax for object creation. [Why?](http://stackoverflow.com/questions/4597926/what-is-the-difference-between-new-object-and-object-literal-notation)
 
-  ```javascript
-  // bad
-  var item = new Object();
+    ```javascript
+    // bad
+    var item = new Object();
 
-  // good
-  var item = {};
-  ```
+    // good
+    var item = {};
+    ```
 
   - Don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8 [More info](https://github.com/airbnb/javascript/issues/61).
 
-  ```javascript
-  // bad
-  var superman = {
-    default: { clark: 'kent' },
-    private: true
-  };
+    ```javascript
+    // bad
+    var superman = {
+      default: { clark: 'kent' },
+      private: true
+    };
 
-  // good
-  var superman = {
-    defaults: { clark: 'kent' },
-    hidden: true
-  };
-  ```
+    // good
+    var superman = {
+      defaults: { clark: 'kent' },
+      hidden: true
+    };
+    ```
 
   - Use readable synonyms in place of reserved words.
 
-  ```javascript
-  // bad
-  var superman = {
-    class: 'alien'
-  };
+    ```javascript
+    // bad
+    var superman = {
+      class: 'alien'
+    };
 
-  // bad
-  var superman = {
-    klass: 'alien'
-  };
+    // bad
+    var superman = {
+      klass: 'alien'
+    };
 
-  // good
-  var superman = {
-    type: 'alien'
-  };
-  ```
+    // good
+    var superman = {
+      type: 'alien'
+    };
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -106,52 +106,52 @@
 
   - Use the literal syntax for array. [Why?](http://stackoverflow.com/questions/931872/what-s-the-difference-between-array-and-while-declaring-a-javascript-ar)
 
-  ```javascript
-  // bad
-  var items = new Array();
+    ```javascript
+    // bad
+    var items = new Array();
 
-  // good
-  var items = [];
-  ```
+    // good
+    var items = [];
+    ```
 
   - Use Array#push instead of direct assignment to add items to an array.
 
-  ```javascript
-  var someStack = [];
+    ```javascript
+    var someStack = [];
 
-  // bad
-  someStack[someStack.length] = 'aabbcc';
+    // bad
+    someStack[someStack.length] = 'aabbcc';
 
-  // good
-  someStack.push('aabbcc');
-  ```
+    // good
+    someStack.push('aabbcc');
+    ```
 
   - When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
-  ```javascript
-  var len = items.length;
-  var itemsCopy = [];
-  var i;
+    ```javascript
+    var len = items.length;
+    var itemsCopy = [];
+    var i;
 
-  // bad
-  for (var i = 0; i < len.length; i++) {
-    itemsCopy[i] = len[i];
-  }
+    // bad
+    for (var i = 0; i < len.length; i++) {
+      itemsCopy[i] = len[i];
+    }
 
-  // good
-  itemsCopy = items.slice();
-  ```
+    // good
+    itemsCopy = items.slice();
+    ```
 
   - To convert an array-like object to an array, use Array#slice.
 
-  ```javascript
-  function trigger() {
-    var args = Array.prototype.slice.call(arguments);
-    // alternatively:
-    var args = [].slice.call(arguments)
-    ...
-  };
-  ```
+    ```javascript
+    function trigger() {
+      var args = Array.prototype.slice.call(arguments);
+      // alternatively:
+      var args = [].slice.call(arguments)
+      ...
+    };
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -227,22 +227,22 @@
 
   - Function expressions:
 
-  ```javascript
-  // anonymous function expression
-  var anonymous = function () {
-    return true;
-  };
+    ```javascript
+    // anonymous function expression
+    var anonymous = function () {
+      return true;
+    };
 
-  // named function expression
-  var named = function named () {
-    return true;
-  };
+    // named function expression
+    var named = function named () {
+      return true;
+    };
 
-  // immediately-invoked function expression (IIFE)
-  (function () {
-    console.log('Welcome to the Internet. Please follow me.');
-  })();
-  ```
+    // immediately-invoked function expression (IIFE)
+    (function () {
+      console.log('Welcome to the Internet. Please follow me.');
+    })();
+    ```
 
   - Never declare a function in a non-function block (if, while, etc).  Assign the function to a variable instead.  Browsers will allow you to do it, but they all interpret it differently.
   ![alt text](http://i.imgur.com/BY3Jlhj.png "Bad News Bears")
@@ -282,6 +282,248 @@
 
 **[⬆ back to top](#table-of-contents)**
 
+## Properties
 
+  - Use dot notation when accessing properties.
+
+    ```javascript
+    var luke = {
+      jedi: true
+      age: 28
+    };
+
+    // bad
+    var isJedi = luke['jedi'];
+
+    // good
+    var isJedi = luke.jedi;
+    ```
+
+  - Use subscript notation `[]` when accessing properties with a variable, for instance when meta-programming (very useful when making reusable components).
+
+    ```javascript
+    var luke = {
+      jedi = true,
+      age: 28
+    };
+
+    function getProp(prop) {
+      return luke[prop];
+    };
+
+    var isJedi = getProp('jedi');
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Variables
+
+  - Always use `var` to declare variables (we can't use const due to IE not supporting it).  Not doing so will result in global variables.  We want to avoid poluting the global namespace.  Remember what Captain Planet warned us about.
+
+    ```javascript
+    // bad
+    superPower = new SuperPower();
+
+    // good
+    var superPower = new SuperPower();
+    ```
+
+  - Use one `var` declaration per variable.
+    It's easier to add new variable declarations this way, and you never have to worry about swapping out a `;` for a `,` or introducing punctuation only diffs.
+
+      ```javascript
+      // bad
+      var items = getItems(),
+          goSportsTeam = true,
+          dragonball = 'z';
+
+      // bad
+      // (compare to above, and try to spot the mistake)
+      var items = getItems(),
+          goSportsTeam = true;
+          dragonball = 'z';
+
+      // good
+      var items = getItems();
+      var goSportsTeam = true;
+      var dragonball = 'z';
+      ```
+
+    - Declare unassigned variables last.  This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+
+      ```javascript
+      // bad
+      var i, len, dragonball,
+        items = getItems(),
+        goSportsTeam = true;
+
+      // bad
+      var i;
+      var items = getItems();
+      var dragonball;
+      var goSportsTeam = true;
+      var len;
+
+      // good
+      var items = getItems();
+      var goSportsTeam = true;
+      var dragonball = 'z';
+      var length;
+      var i;
+      ```
+
+    - Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
+
+      ```javascript
+      // bad
+      function () {
+        test();
+        console.log('doing stuff..');
+
+        //..other stuff..
+
+        var name = getName();
+
+        if (name === 'test') {
+          return false;
+        }
+
+        return name;
+      }
+
+      // good
+      function () {
+        var name = getName();
+
+        test();
+        console.log('doing stuff..');
+
+        //..other stuff..
+
+        if (name === 'test') {
+          return false;
+        }
+
+        return name;
+      }
+
+      // bad - unnecessary function call
+      function () {
+        var name = getName();
+
+        if (!arguments.length) {
+          return false;
+        }
+
+        this.setFirstName(name);
+
+        return true;
+      }
+
+      // good
+      function () {
+        var name;
+
+        if (!arguments.length) {
+          return false;
+        }
+
+        name = getName();
+        this.setFirstName(name);
+
+        return true;
+      }
+      ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Hoisting
+
+  - Variable declarations get hoisted to the top of their scope, but their assignment does not.
+
+    ```javascript
+    // we know this wouldn't work (assuming there
+    // is no notDefined global variable)
+    function example () {
+      console.log(notDefined); // => throws a ReferenceError
+    };
+
+    /* creating a variable declaration after you
+    *  reference the variable will work due to
+    *  variable hoisting.  Note: the assignment
+    *  value of `true` is not hoisted.
+    */
+    function example () {
+      console.log(declaredButNotAssigned); // => undefined
+      var declaredButNotAssigned = true;
+    };
+
+    /* The interpreter is hoisting the variable
+    *  declaration to the top of the scope,
+    *  which means our example could be rewritten as:
+    */
+    function example () {
+      var declaredButNotAssigned;
+      console.log(declaredButNotAssigned); // => undefined
+      declaredButNotAssigned = true;
+    };
+    ```
+  - Anonymous function expressions hoist their variable name, but not the function assignment.
+
+    ```javascript
+    function example () {
+      console.log(anonymous); // => undefined
+
+      anonymous(); // => TypeError anonymous is not a function
+
+      var anonymous = function () {
+        console.log('anonymous function expression')
+      };
+    };
+    ```
+
+  - Named function expressions hoist the variable name, not the function name or the function body.
+
+    ```javascript
+    function example () {
+      console.log(named); // => undefined
+
+      named(); // TypeError named is not a function
+
+      superPower(); // => ReferenceError superPower is not defined
+
+      var named = function superPower () {
+        console.log('Flying');
+      };
+    };
+
+    // the same is true when the function name
+    // is the same as the variable name.
+    function example () {
+      console.log(named); // => undefined
+
+      named(); // => TypeError named is not a function
+
+      var named = function named () {
+        console.log('named');
+      };
+    };
+    ```
+
+  - Function declarations hoist their name and function body.
+
+    ```javascript
+    function example () {
+      superPower(); // => Flying
+
+      function superPower () {
+        console.log('Flying');
+      };
+    };
+    ```
+
+  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
+
+**[⬆ back to top](#table-of-contents)**
 
 # };
