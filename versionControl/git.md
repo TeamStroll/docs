@@ -10,7 +10,8 @@ Most of our code lives on Bitbucket, though these docs are hosted on Github.  Th
 
 *Assuming you have already installed git on the command line/shell*
 
-![alt text](https://xkcd.com/1597/ "Really you just need a few")
+![alt text](http://imgs.xkcd.com/comics/git.png
+ "Really you just need a few")
 
 To start with the project `git clone [project url]`
 
@@ -26,7 +27,7 @@ Stage your current progress for a commit `git add -A`
 
 Commit your current work `git commit -m [commit message]`
 
-![alt text](https://xkcd.com/1296/ "Commit Messaging")
+![alt text](http://imgs.xkcd.com/comics/git_commit.png "Commit Messaging")
 Aim for the more discriptive text at the beginning...
 
 Push your commit to the cloud `git push -u origin [branch-name]`
