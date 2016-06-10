@@ -34,3 +34,5 @@ Push your commit to the cloud `git push -u origin [branch-name]`
 Pull the current work on the cloud `git pull [branch-url]`
 
 > Pulling and merging tends to be much easier on using a graphical interface for resolving merge conflicts. We make use of [SourceTree](https://www.atlassian.com/software/sourcetree)
+
+Also, it is a good idea to set up aliases for these.  For example, in my bash_profile, I set up an alias `gpo` for `git push -u origin master` - this saves typing.  You can see some of mine [here](https://github.com/keldonia/Dotfiles).
