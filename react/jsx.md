@@ -7,7 +7,6 @@
 3. [JSX "Interpolation"](#jsx-interpolation)
 4. [Including Components](#including-components)
 5. [Differences between JSX and HTML](#differences-between-jsx-and-html)
-6. [Listwise Diffing](#listwise-diffing)
 
 ## What is JSX?
 
@@ -151,5 +150,3 @@ There are some notable differences in how one writes JSX versus HTML.
 - As `class` and `for` are reserved key workds in JavaScript, the JSX elements for DOM nodes should use the attribute names `className` and `htmlFor` respectively (`div className='foo' />`).
 
 **[⬆ back to top](#table-of-contents)**
-
-## Listwise Diffing and Keys

@@ -3,7 +3,7 @@
 ## Style Guides
   - JavaScript
     - [ECMAScript 5](./styleGuides/JavaScriptES5.md)
-  - [React](./styleGuides/ReactJSX.md)
+  - [React/JSX](./styleGuides/ReactJSX.md)
   - [CSS/Sass](./styleGuides/CSSSass.md)
 
 ## React

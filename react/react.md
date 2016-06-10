@@ -55,6 +55,22 @@ var ClickCounter = React.createClass({
 
 Sometimes you want to update a component based on user interaction or receiving new data from the server.  For this you use component lifecycle methods.  I would write more here but [the Facebook documentation](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods) in this is very good.
 
+## Listwise Diffing and Keys
+
+To reconcile children, React takes a naive approach.   It goes over the two lists of children at the same time and generates a mutation when there's a difference.  This works well when adding an element to the end of a list, but inserting at the beginning of a list is more problematic - as it will see the nodes as different will mutate all nodes with similar elements, eg. `span`s.
+
+There are many algorithms that attempt to find the minimum sets of operations to transform a list of elements. [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) can find the minimum using single element insertion, deletion and substitution in O(n<sup>2</sup>). Even if we were to use Levenshtein, this doesn't find when a node has moved into another position and algorithms to do that have much worse complexity.
+
+```jsx
+renderA: <div><span key="first">first</span></div>
+renderB: <div><span key="second">second</span><span key="first">first</span></div>
+=> [insertNode <span>second</span>]
+```
+
+Thus, React uses keys.  This allows React to find insertion, deletion, substitutions, and moves in O(n) time! - via a hash table.  Most of the time, the element you are using already has a unique id.  This key only has to be unique among its siblings - not globally.
+
+More info at the [React Docs](https://facebook.github.io/react/docs/reconciliation.html#list-wise-diff).
+
 ## More Resources
 
 - [React.js Tutorial Guide Gotchas](https://zapier.com/engineering/react-js-tutorial-guide-gotchas/)
