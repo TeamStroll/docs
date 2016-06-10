@@ -10,3 +10,7 @@
   - [React](./react/react.md)
   - [JSX](./react/jsx.md)
   - [Flux](./react/flux.md)
+
+## Version Control
+  - [Git](./versionControl/git.md)
+  - [Stroll Practices](./versionControl/StrollPractices.md)
