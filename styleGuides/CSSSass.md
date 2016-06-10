@@ -321,6 +321,14 @@ If you must use an ID selector in the first place (and you should really try not
 
 **[⬆ back to top](#table-of-contents)**
 
+## Webpack Compression
+
+  - We use webpack to compile down our Sass into css for us.  It also concatenates the multiple sass files into a single css file (soon into branch specifc css once our bundles are chunked).  Because the order in which the files are concatenated is not guaranteed, you can not rely on using file order across multiple files for precedence (last rule will 'win').  However, you can still rely on this order of precedence *within* files.
+  - Upcoming nicities
+    - Preprocessing
+      - This will us to write standard CSS/Sass which will the prefix the CSS selectors with the appropriate browser specific identifers.
+      - There will also soon be some preprocessing to add support for certain IE8/oldIE specific CSS rules.
+
 ## License
 
 (The MIT License)

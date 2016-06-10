@@ -318,7 +318,7 @@
 
 ## Variables
 
-  - Always use `var` to declare variables (we can't use const due to IE not supporting it).  Not doing so will result in global variables.  We want to avoid poluting the global namespace.  Remember what Captain Planet warned us about.
+  - Always use `var` to declare variables (we can't use `const` due to IE not supporting it).  Not doing so will result in global variables.  We want to avoid poluting the global namespace.  Remember what Captain Planet warned us about.
 
     ```javascript
     // bad
