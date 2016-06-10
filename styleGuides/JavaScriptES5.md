@@ -712,6 +712,8 @@
       };
       ```
 
+    - There is no need to comment if the code is self-documenting.
+
 **[⬆ back to top](#table-of-contents)**
 
 ## Whitespace
