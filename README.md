@@ -1,4 +1,4 @@
-# Stroll Engineer Docs
+# Stroll Engineering Docs
 
 ## Style Guides
   - JavaScript
@@ -9,3 +9,4 @@
 ## React
   - [React](./react/react.md)
   - [JSX](./react/jsx.md)
+  - [Flux](./react/flux.md)

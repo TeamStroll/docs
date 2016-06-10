@@ -50,3 +50,11 @@ var ClickCounter = React.createClass({
   }
 });
 ```
+
+## Component Lifecycle Methods
+
+Sometimes you want to update a component based on user interaction or receiving new data from the server.  For this you use component lifecycle methods.  I would write more here but [the Facebook documentation](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods) in this is very good.
+
+## More Resources
+
+- [React.js Tutorial Guide Gotchas](https://zapier.com/engineering/react-js-tutorial-guide-gotchas/)

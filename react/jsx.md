@@ -6,6 +6,8 @@
 2. [What is the point of JSX?](#what-is-the-point-of-jsx)
 3. [JSX "Interpolation"](#jsx-interpolation)
 4. [Including Components](#including-components)
+5. [Differences between JSX and HTML](#differences-between-jsx-and-html)
+6. [Listwise Diffing](#listwise-diffing)
 
 ## What is JSX?
 
@@ -27,6 +29,8 @@ var movies =(
 
 render(movies);
 ```
+
+**[⬆ back to top](#table-of-contents)**
 
 ## What is the point of JSX?
 
@@ -51,6 +55,8 @@ ReactDOM.render(
   document.body
 );
 ```
+
+**[⬆ back to top](#table-of-contents)**
 
 ## JSX "Interpolation"
 
@@ -119,6 +125,8 @@ render: function () {
 </ul>
 ```
 
+**[⬆ back to top](#table-of-contents)**
+
 ## Including Components
 
 JSX is simply a syntax for expressing nested data structures.  It does not use *real* HTML elements, but keeps track of tree structures and their nodes properties.  As such we can use the following syntax.
@@ -132,4 +140,16 @@ ReactDOM.render(
 
 `Widget` is not a valid HTML tag name.  Instead `<Widget>` is an instance of `Widget` that should be created and rendered with no properties or children.  This really just syntactic sugar for `React.createElement(Widget, {})`.
 
+**[⬆ back to top](#table-of-contents)**
+
 ## Differences between JSX and HTML
+
+There are some notable differences in how one writes JSX versus HTML.
+
+- All DOM properties and attributes should be camelCased - ie standard JS style.  **However**, `data-*` and `aria-*` should be lowercased only.
+- The style attribute accepts a JavaScript object with camelCased properties rather than a CSS string.  This is because this is more efficient for processing and helps prevent XSS security holes.
+- As `class` and `for` are reserved key workds in JavaScript, the JSX elements for DOM nodes should use the attribute names `className` and `htmlFor` respectively (`div className='foo' />`).
+
+**[⬆ back to top](#table-of-contents)**
+
+## Listwise Diffing and Keys
