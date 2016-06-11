@@ -14,3 +14,11 @@
 ## Version Control
   - [Git](./versionControl/git.md)
   - [Stroll Practices](./versionControl/StrollPractices.md)
+
+## Setting Up Your Development Environment
+  - [Development Environment](./setUp/devEnvironment.md)
+  - [Running a Local Instance](./setUp/runningALocalInstance.md)
+
+## Other Tips
+  - [Dotfiles](./otherTips/dotfiles.md)
+  - [IDEs](./otherTips/IDE.md)

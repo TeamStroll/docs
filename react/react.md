@@ -71,6 +71,13 @@ Thus, React uses keys.  This allows React to find insertion, deletion, substitut
 
 More info at the [React Docs](https://facebook.github.io/react/docs/reconciliation.html#list-wise-diff).
 
+## Input Sanitization
+
+In React, except for two cases React will sanitize the innerHTML of inputs for you.
+
+- CSS styles - are not sanitized which is known IE8 won't fix issue.
+- You use `dangerouslySetInnerHTML` - which removes this sanitization step.
+
 ## More Resources
 
 - [React.js Tutorial Guide Gotchas](https://zapier.com/engineering/react-js-tutorial-guide-gotchas/)
