@@ -39,7 +39,7 @@ You will probably want to install webpack globally.  This can be done using `npm
 
 ## Install Java
 
-Type install Java into google, install it.
+Type install [Java](https://java.com/en/download/help/index_installing.xml) into google, install it.
 
 ## Browser
 
