@@ -84,7 +84,7 @@ Thus of we wrote: `className={myClass;}`.  It would transpile into: `{className:
 
 But what if we need to use multiline constructs when rendering components?  There are several strategies for accomplishing this.
 
-### Do the claculations outside of JSX
+### Do the calculations outside of JSX
 
 ```jsx
 render: function () {
