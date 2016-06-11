@@ -37,6 +37,17 @@ If Windows, download the installer and reinstall...
 
 You will probably want to install webpack globally.  This can be done using `npm`.  Simply run the following command: `npm install webpack -g`
 
+## Install Java
+
+Type install Java into google, install it.
+
+## Browser
+
+Install [Chrome](https://www.google.com/chrome/)
+
+If frontend, install the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/)
+
+
 ## Clone the Repo
 
 1. Open up your terminal.
