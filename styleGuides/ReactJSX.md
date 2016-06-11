@@ -18,6 +18,8 @@
   12. [`isMounted`](#ismounted)
   13. [License](#license)
 
+![alt text](http://imgs.xkcd.com/comics/code_quality.png "Why we care")
+
 ## Basic Rules
 
   - Only include one React component per file.

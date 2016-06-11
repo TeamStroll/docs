@@ -25,6 +25,8 @@
   4. [Webpack Compression](#webpack-compression)
   5. [License](#license)
 
+![alt text](http://imgs.xkcd.com/comics/code_quality.png "Why we care")
+
 ## Terminology
 
 ### Rule declaration

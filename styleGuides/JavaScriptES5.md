@@ -6,31 +6,35 @@
 ## Table of Contents
 
 1. [Types](#types)
-2. [Objects](#objects)
-3. [Arrays](#arrays)
-4. [Strings](#strings)
-5. [Functions](#functions)
-6. [Properties](#properties)
-7. [Variables](#variables)
-8. [Hoisting](#hoisting)
-9. [Comparison Operators & Equality](#comparison-operators--equality)
-10. [Blocks](#blocks)
-11. [Comments](#comments)
-12. [Whitespace](#whitespace)
-13. [Commas](#commas)
-14. [Semicolons](#semicolons)
-15. [Type Casting & Coercion](#type-casting--coercion)
-16. [Naming Conventions](#naming-conventions)
-17. [Accessors](#accessors)
-18. [Constructors](#constructors)
-19. [Events](#events)
-20. [jQuery](#jQuery)
-21. [ECMA Script 5 Compatability](#ecmascript-5-compatability)
-22. [Testing](#testing)
-23. [Performance](#performance)
-24. [Resources](#resources)
-25. [Additional Notes](#additional-notes)
-26. [License](#license)
+1. [Objects](#objects)
+1. [Arrays](#arrays)
+1. [Strings](#strings)
+1. [Functions](#functions)
+1. [Properties](#properties)
+1. [Variables](#variables)
+1. [Hoisting](#hoisting)
+1. [Comparison Operators & Equality](#comparison-operators--equality)
+1. [Blocks](#blocks)
+1. [Comments](#comments)
+1. [Whitespace](#whitespace)
+1. [Lines](#lines)
+1. [Commas](#commas)
+1. [Semicolons](#semicolons)
+1. [Type Casting & Coercion](#type-casting--coercion)
+1. [Naming Conventions](#naming-conventions)
+1. [Accessors](#accessors)
+1. [Constructors](#constructors)
+1. [Events](#events)
+1. [jQuery](#jQuery)
+1. [Switches](#switches)
+1. [ECMA Script 5 Compatability](#ecmascript-5-compatability)
+1. [Testing](#testing)
+1. [Performance](#performance)
+1. [Resources](#resources)
+1. [Additional Notes](#additional-notes)
+1. [License](#license)
+
+![alt text](http://imgs.xkcd.com/comics/code_quality.png "Why we care")
 
 ## Types
 
@@ -373,6 +377,8 @@
       ```
 
     - Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
+
+      > Deeper inside of functions though you may declare variables where they make sense/increase readibility.
 
       ```javascript
       // bad
@@ -718,7 +724,7 @@
 
 ## Whitespace
 
-  - Use soft tabs set to 2 spaces.
+  - Use soft tabs set to 2 spaces. Do **not** use tabs - different editors interpret them differently.
 
     ```javascript
     // bad
@@ -801,30 +807,6 @@
     var x = y + 5;
     ```
 
-  - End files with a single newline character.
-
-    ```javascript
-    // bad
-    (function (global) {
-      // ...stuff...
-    })(this);
-    ```
-
-    ```javascript
-    // bad
-    (function (global) {
-      // ...stuff...
-    })(this);↵
-    ↵
-    ```
-
-    ```javascript
-    // good
-    (function (global) {
-      // ...stuff...
-    })(this);↵
-    ```
-
   - Use indentation when making long method chains. Use a leading dot, which
     emphasizes that the line is a method call, not a new statement.
 
@@ -901,6 +883,61 @@
 
       return obj;
       ```
+
+  - Unary special-character operators (e.g., `!`, `++`) must not have space next to their operand.
+  - Any `,` and `;` must not have preceding space.
+  - Any `;` used as a statement terminator must be at the end of the line.
+  - The `?` and `:` in a ternary conditional must have space on both sides.
+  - No filler spaces in empty constructs (e.g., `{}`, `[]`, `fn()`)
+
+**[⬆ back to top](#table-of-contents)**
+
+## Lines
+
+- Use UNIX-style newlines (`\n`), and a newline character as the last character of a file. Windows-style newlines (`\r\n`) are not allowed. You can set this in your IDE.
+- Lines should not have more than 80 characters and must not exceed 100 characters, this for readability.  If a JavaScript statement does not fit on one line, the best place to break it, is after an operator or a comma. There are two exceptions to this rule:
+  - If the line contains a long URL.
+  - If the line contains a regex literal. This prevents having to use the regex constructor which requires otherwise unnecessary string escaping.
+- Lines should be broken into logical groups if it improves readability, such as splitting each expression of a ternary operator onto its own line even if both will fit on a single line.
+
+  ```javascript
+  var baz = firstCondition( foo ) && secondCondition( bar ) ?
+    qux( foo, bar ) :
+    foo;
+  ```
+
+- When a conditional is too long to fit on one line, successive lines must be indented one extra level to distinguish them from the body.
+
+  ```javascript
+  if ( firstCondition() && secondCondition() &&
+      thirdCondition() ) {
+    doStuff();
+  }
+  ```
+
+- End files with a single newline character.
+
+    ```javascript
+    // bad
+    (function (global) {
+      // ...stuff...
+    })(this);
+    ```
+
+    ```javascript
+    // bad
+    (function (global) {
+      // ...stuff...
+    })(this);↵
+    ↵
+    ```
+
+    ```javascript
+    // good
+    (function (global) {
+      // ...stuff...
+    })(this);↵
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -1077,6 +1114,9 @@
     // good
     var hasAge = !!age;
     ```
+
+  - JavaScript type coercion can be odd at [times](https://www.destroyallsoftware.com/talks/wat)...
+    > [JSFuck](http://www.jsfuck.com/): Yes you can write all your js using only the following 6 characters, `[` `]` `(` `)` `!` `+`
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -1436,6 +1476,42 @@
     // good
     $sidebar.find('ul').hide();
     ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Switches
+
+  -All switch statement cases must end with break, throw, return, or a comment indicating a fall-through.
+
+    ```javascript
+    // bad
+    switch(value) {
+      case 1:
+          doSomething();
+
+      case 2:
+          doSomethingElse();
+          break;
+
+      default:
+          doDefaultThing();
+    }
+
+    // good
+    switch(value) {
+      case 1:
+          doSomething();
+          //falls through
+
+      case 2:
+          doSomethingElse();
+          break;
+
+      default:
+          doDefaultThing();
+    }
+    ```
+    > Why: The first case falls through into the second case so if value is 1, then both `doSomething()` and `doSomethingElse()` are executed. And here’s the question: is there an error here? It’s possible that the developer forgot to include a break in the first case, but it’s also equally possible that the developer intended for the first case to fall through to the second case. There’s no way to tell just from looking at the code.
 
 **[⬆ back to top](#table-of-contents)**
 
