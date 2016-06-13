@@ -3,19 +3,19 @@
 ## Install Homebrew - if on a Mac/Linux
 
 Mac:
-  First, you are going to need to install [XCode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).  Don't worry it's free!
+  - Install [XCode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).  Don't worry it's free!
 
-  Second, I would recommend using Homebrew - it is a nice package manager for Mac. Simpily run this command: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+  - I would recommend using Homebrew - it is a nice package manager for Mac. Simpily run this command: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 Linux:
-  Run this command to install Linuxbrew: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"`
+  - Run this command to install Linuxbrew: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"`
 
-  Then add these lines to your `.bashsrc` or `.zhshrc` file:
-  ```bash
-  export PATH="$HOME/.linuxbrew/bin:$PATH"
-  export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-  ```
+  - Then add these lines to your `.bashsrc` or `.zhshrc` file:
+    ```bash
+    export PATH="$HOME/.linuxbrew/bin:$PATH"
+    export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+    export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+    ```
 
 ## Set Up Node.js
 
