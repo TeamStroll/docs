@@ -55,7 +55,7 @@ Commit your current work `git commit -m [commit message]`
 
 ![alt text](http://imgs.xkcd.com/comics/git_commit.png "Commit Messaging")
 
-Aim for the more discriptive text at the beginning...
+*Aim for the more discriptive text at the beginning...*
 
 Push your commit to the cloud `git push -u origin [branch-name]`
 
