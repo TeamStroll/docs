@@ -2,7 +2,7 @@
 
 ## A Note on Google Drive
 
-  ![alt text](http://xkcd.com/1360/ "Don't sync everything")
+  ![alt text](http://imgs.xkcd.com/comics/old_files.png "Don't sync everything")
 
   You probably don't want to sync everything.  A lot of it is extraneous to your purposes.
 

@@ -10,7 +10,7 @@ React simplifies the handling UI updates in response to data changes, removing t
 
 ## The Offical Docs
 
-![alt text](http://xkcd.com/1364/ "So easy...")
+![alt text](http://imgs.xkcd.com/comics/like_im_five.png "So easy...")
 
 The [offical documenation](https://facebook.github.io/react/docs/getting-started.html) on the Facebook github is a great place to start learning react. The [tutorial](https://facebook.github.io/react/docs/tutorial.html) provided is particularly good.
 
