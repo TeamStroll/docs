@@ -1,5 +1,11 @@
 # Setting Up Your Development Environment
 
+## A Note on Google Drive
+
+  ![alt text](http://xkcd.com/1360/ "Don't sync everything")
+
+  You probably don't want to sync everything.  A lot of it is extraneous to your purposes.
+
 ## Install Homebrew - if on a Mac/Linux
 
 Mac:
