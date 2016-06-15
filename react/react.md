@@ -16,6 +16,9 @@ The [offical documenation](https://facebook.github.io/react/docs/getting-started
 
 ## Architecture of a React Webapp
 
+![alt text](http://imgs.xkcd.com/comics/manuals.png "Writing Comments")
+*Components should be stupid*
+
 React apps can be decomposed into constituent components. The use of components allows for greater maintainability, reuse, and ease of testing.  Indeed when making a React component, it should be tailored to be reuseable.  Most components should also be 'dumb', listening for props to be passed to it and rerendering based upon these props (though there are times when a lower level component might want to track parts of its own state - for example when a dropdown menu is open/closed).  We typically write our react component renders in [JSX](./jsx.md).
 
 An example component:
@@ -79,6 +82,11 @@ In React, except for two cases React will sanitize the innerHTML of inputs for y
 
 - CSS styles - are not sanitized which is known IE8 won't fix issue.
 - You use `dangerouslySetInnerHTML` - which removes this sanitization step.
+
+## How to Programatically Move Around
+
+If you have installed the [React Developer Tools plugin for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), you can open the React tab, and select the header - this has access to the router.  From here you can call `$r.context.router.replace('[path]')`, eg. `$r.context.router.replace('/radiology_dashboard/overview')` will take you to the page /radiology_dashboard/overview.
+
 
 ## More Resources
 

@@ -632,6 +632,9 @@
 
 ## Comments
 
+  ![alt text](http://imgs.xkcd.com/comics/manuals.png "Writing Comments")
+  *Comments and Code*
+
   - Use `/** ... */` for multi-line comments.  Include a description, specify types and values for all parameters and return values.
 
     ```javascript
