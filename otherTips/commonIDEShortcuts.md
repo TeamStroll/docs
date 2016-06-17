@@ -1,6 +1,6 @@
 # Common IDE Shortcuts
 
-*These commands work on Macs - the Linux and Windows commands are often similar but with the `⌘` replaced with `ctrl`.
+*These commands work on Macs - the Linux and Windows commands are often similar but with the `⌘` replaced with `ctrl`.*
 
 - Sidebar
   - To get to the sidebar with the files for keyboard navigation, on Mac `ctrl` + `0`
