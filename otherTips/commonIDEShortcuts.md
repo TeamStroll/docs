@@ -1,3 +1,48 @@
 # Common IDE Shortcuts
 
 *These commands work on Macs - the Linux and Windows commands are often similar but with the `⌘` replaced with `ctrl`.
+
+- Sidebar
+  - To get to the sidebar with the files for keyboard navigation, on Mac `ctrl` + `0`
+  - To create a new folder, once in the sidebar, `shift` + `a`
+  - To create a new file, once in the sidebar, `a`
+  - To hide the sidebar, `⌘` + `\`
+- When editing the file
+  - Line Edits
+    - To move a row or group of rows, `⌘` + `[up/down arrow key]` to shift the lines up and down the file.
+    - To duplicate a row, `⌘` + `shift` + `d`
+    - To delete everything on a row before a cursor, `⌘` + `delete`
+    - To increase the level of indentation of a line, `⌘` + `]`
+    - To decrease the level of indentation of a line, `⌘` + `[`
+    - To comment out a line, or uncomment a line, `⌘` + `/`
+    - To move to the beginning of a line, `ctrl` + `a` or `⌘` + `←`
+    - To move to the end of a line, `ctrl` + `e` or `⌘` + `→`
+  - Text Edits
+    - To select the full word where your cursor currently is, `⌘` + `d`
+    - To select addtional passages that are the same as current selected, `⌘` + `d`
+    - To select all of the same passage, `ctrl` + `⌘` + `g`
+    - To select an entire row, `⌘` + `l`
+    - To select the next row, `⌘` + `l`
+    - To delete a single word, `⌥` + `delete` (⌥ is `option`)
+  - Panes
+    - To open a new pane, `⌘` + `k` + `[arrow key]` (opens a new pane with a copy of the current pane in the selected direction)
+  - Files
+    - To fuzzy find files in the project, `⌘` + `t`
+    - To fuzzy find an open file, `⌘` + `b`
+    - To create a new folder, once in the sidebar, `shift` + `a`
+    - To create a new file, once in the sidebar, `a`
+    - To move a file, once in the sidebar, `m`
+    - To delete a file, once in the sidebar, `delete`
+    - To find a string in a file, `⌘` + `f`
+    - To select the next matching string, `⌘` + `g`
+    - To select all matching strings, `ctrl` + `⌘` + `g`
+    - To open a new file, `⌘` + `n`
+  - Other
+    - Covert tabs to spaces, `⌘` + `⌥` + `[` (⌥ is `option`)
+    - Increase font size, `⌘` + `+`
+    - Decrease font size, `⌘` + `-`
+    - Close the bottom bar, if you have it, `esc`
+    - Find matching bracket, `⌥` + `m` (⌥ is `option`)
+    - To open settings, `⌘` + `,`
+  - Snippets
+    - Use them
