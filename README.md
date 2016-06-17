@@ -30,3 +30,4 @@
   - [Dotfiles](./otherTips/dotfiles.md)
   - [IDEs](./otherTips/IDE.md)
   - [Common IDE Shortcuts](./otherTips/commonIDEShortcuts.md)
+  - [Additional Tips](./otherTips/additionalTips.md)
