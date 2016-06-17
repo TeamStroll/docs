@@ -23,7 +23,7 @@
     - To select all of the same passage, `ctrl` + `⌘` + `g`
     - To select an entire row, `⌘` + `l`
     - To select the next row, `⌘` + `l`
-    - To delete a single word, `⌥` + `delete` (⌥ is `option`)
+    - To delete a single word, `⌥` + `delete` (`⌥` is `option`)
   - Panes
     - To open a new pane, `⌘` + `k` + `[arrow key]` (opens a new pane with a copy of the current pane in the selected direction)
   - Files
@@ -38,11 +38,11 @@
     - To select all matching strings, `ctrl` + `⌘` + `g`
     - To open a new file, `⌘` + `n`
   - Other
-    - Covert tabs to spaces, `⌘` + `⌥` + `[` (⌥ is `option`)
+    - Covert tabs to spaces, `⌘` + `⌥` + `[` (`⌥` is `option`)
     - Increase font size, `⌘` + `+`
     - Decrease font size, `⌘` + `-`
     - Close the bottom bar, if you have it, `esc`
-    - Find matching bracket, `⌥` + `m` (⌥ is `option`)
+    - Find matching bracket, `⌥` + `m` (`⌥` is `option`)
     - To open settings, `⌘` + `,`
   - Snippets
     - Use them
