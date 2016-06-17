@@ -5,7 +5,9 @@ Dotfiles can help improve and speed up your coding performance by removing a lot
 Your bash profile (or zsh profile) should live at an address approximately like this:
 `~/.bash_profile` (this is what it will be on Mac if you are using bash and haven't changed anything). In Linux it should be at `~/.bashsrc` or `~/.zhshrc`.
 
-Open this in your IDE/editor of choice and go wild.
+Open this in your IDE/editor of choice and go wild. But remember:
+
+![alt text](http://imgs.xkcd.com/comics/automation.png "There can be too much of a good thing")
 
 If you are a Windows user, go [here](http://www.google.com)
 

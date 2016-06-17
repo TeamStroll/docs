@@ -1,5 +1,19 @@
 # Git
 
+## Table of Contents
+
+1. [Why Git](#why-git)
+1. [Save Time](#save-time)
+1. [Work Offline](#work-offline)
+1. [Undo Mistakes](#undo-mistakes)
+1. [Don't Worry](#dont-worry)
+1. [Make Useful Commits](#make-useful-commits)
+1. [Work in your Own Way](#work-in-your-own-way)
+1. [Don't Mix Things Up](#dont-mix-things-up)
+1. [How to Git](#how-to-git)
+2. [Git Pulling and Merging](#git-pulling-and-merging)
+3. [Merge Conflicts](#merge-conflicts)
+
 ## Why Git?
 
 Although there are dozens of version control systems on the market, some of the world's most renowned projects (like the Linux Kernel, Ruby on Rails, or jQuery) are using Git as their VCS of choice. Here are some of the reasons why.
@@ -64,3 +78,19 @@ Pull the current work on the cloud `git pull [branch-url]`
 > Pulling and merging tends to be much easier on using a graphical interface for resolving merge conflicts. We make use of [SourceTree](https://www.atlassian.com/software/sourcetree)
 
 Also, it is a good idea to set up aliases for these.  For example, in my bash_profile, I set up an alias `gpo` for `git push -u origin master` - this saves typing.  You can see some of mine [here](https://github.com/keldonia/Dotfiles).
+
+## Git Pulling and Merging
+
+Running `git pull origin [branch]` will fetch the most current version of the branch on the remote repository and then attempt to auto-merge this fetched branch with your current branch, with the most recent changes to a line considered to be the most truthy.  This process can cause a merge conflict when the branch you are working on and the pulled branch have made changes to the same file.  We will try to minimize these potential conflicts by working on different components and areas of the codebase.
+
+## Merge Conflicts
+
+Occasionally, despite our efforts, or due to necessity there will merge conflicts.  You will see these once you attempt pull or merge these conflicting branches.  To resolve these merge conflicts, you will need to follow several steps.  The resolution of these merge conflicts will likely be easier if you are using [SourceTree](https://www.sourcetreeapp.com/download/), which will allow you choose which lines to keep via a GUI.
+
+If you are not using SourceTree follow these steps:
+1. You will want to run `git status` to see which files are in conflict.
+1. Go in and edit these files, you will typically see something like `<<<<<<HEAD`, some code `==========` some other code `[commit hash]>>>>>>>>`  You will need to manually diff the code between these two sections.
+1. If you need to remove any files run the command `git rm -f [file w/ path]` (such as `/client/bundle.js` and `/client/bundle.js.map`)
+1. Once you have finished diffing these files, and removing necessary ones run `git status`, this will reveal any files that need to be committed.
+1. If these all look fine you can add all of them to your next commit with `git add -A`, else you can add them with `git add [filename]`, else go change the necessary files.
+1.  Once satisfied and there are no remaining 'red' files when you run `git status` run `git commit -m '[commit message]'`

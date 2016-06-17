@@ -45,7 +45,33 @@ You will probably want to install webpack globally.  This can be done using `npm
 
 ## Install Java
 
-Type install [Java](https://java.com/en/download/help/index_installing.xml) into google, install it.
+Type install [Java](https://java.com/en/download/help/index_installing.xml) into google, and install it.
+
+## Install MySQL - if on the backend
+
+I hope you installed brew, as you just have to run:
+
+`brew install mysql`
+
+Create a username
+
+To log in run `mysql -u root -p`  the password you setup in install.
+
+sftp into the server ask Brian where the data dump is.
+
+Then you will need to create a table in mysql.  Once logged into mysql, you will want to create a table using the command: `CREATE TABLE sbe`.
+
+Once this is done you will want to exit out of mysql and run the following command: `mysql -u root -p sbe < [data dump]`.
+
+In mysql, run `use sbe`.
+
+You can then see all the tables by running: `SHOW TABLES`
+
+## Open project in Eclipse or other IDE
+
+For the backend, open it in [Eclipse](https://www.eclipse.org/downloads/) or another IDE of choice.  Import the sh_repo as a Maven project and then navigate to 'sh_repo/applications/webApps/' and open 'platform'.  Once imported you should be good to go, hopefully...
+
+Once imported, you want to navigate to: 'src/main/java/com/sh/platform/', you then run a local backend via running 'Main.java', it will take a while to build to this the first time.  See backend for further details.
 
 ## Browser
 
