@@ -6,6 +6,8 @@
   - To get to the sidebar with the files for keyboard navigation, on Mac `ctrl` + `0`
   - To create a new folder, once in the sidebar, `shift` + `a`
   - To create a new file, once in the sidebar, `a`
+  - To move a file, once in the sidebar, `m`
+  - To delete a file, once in the sidebar, `delete`
   - To hide the sidebar, `⌘` + `\`
 - When editing the file
   - Line Edits
