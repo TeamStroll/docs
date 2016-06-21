@@ -59,13 +59,13 @@ To log in run `mysql -u root -p`  the password you setup in install.
 
 sftp into the server ask Brian where the data dump is.
 
-Then you will need to create a table in mysql.  Once logged into mysql, you will want to create a table using the command: `CREATE TABLE sbe`.
+Then you will need to create a table in mysql.  Once logged into mysql, you will want to create a table using the command: `CREATE TABLE sbe;`.
 
 Once this is done you will want to exit out of mysql and run the following command: `mysql -u root -p sbe < [data dump]`.
 
 In mysql, run `use sbe`.
 
-You can then see all the tables by running: `SHOW TABLES`
+You can then see all the tables by running: `SHOW TABLES;`
 
 ## Open project in Eclipse or other IDE
 
@@ -91,3 +91,5 @@ If frontend, install the [React Developer Tools](https://chrome.google.com/webst
 7. `git checkout -b [new branch for you]`
 
 Clone the current repo you will be working with.  See Brian, Jordan, or Matt for the password/username.
+
+![alt text](http://imgs.xkcd.com/comics/identity.png "Your password")
