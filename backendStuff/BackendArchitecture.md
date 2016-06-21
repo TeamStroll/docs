@@ -2,16 +2,17 @@
 
 Frontend (iPad/website) -> Controller —> Facade —> Domain —> SQL DB
 
-### Overview of the backend:
+## Overview of the backend:
 Bitbucket repository: sh_repo
 Ideal IDE: Eclipse
 Stroll backend (SBE) is built using a Spring framework and CRUD (Create, Read, Update, Delete) Repositories that deal with an SQL Database. (This means absolutely nothing, so just read on)
 
-### Domain objects
+## Domain objects
 In the sh.platform/src/main/java/com.sh.platform.domain.model directory of the project there are a bunch of packages, each standing for a different type of object that we use. There you’ll find patients, users, facilities, etc. Inside each package, there are usually at least 3 files:
-1) `<domain object name>.java (domain object)`
-2) `<domain object name>Factory.java (factory)`
-3) `<domain object name>Repository.java (repository)`
+
+1. `<domain object name>.java (domain object)`
+2. `<domain object name>Factory.java (factory)`
+3. `<domain object name>Repository.java (repository)`
 
 Think of the domain object as a plain-old java objects that store information and nothing else. They have a list of fields and getters and setters for those fields. No actual computation is done in these objects. Each domain object has an associated SQL table whose columns are the fields of that object.
 The factories are responsible for creating these domain objects. Instead of instantiating a new domain object like Question as Question question = new Question(), we use QuestionFactory to say Question question = questionFactory.makeQuestion(). 
