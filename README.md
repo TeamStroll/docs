@@ -25,6 +25,7 @@
 
 ## API Notes
   - [API Docs](./APINotes/apiDocs.md)
+  - [Backend Architecture](./backendStuff/BackendArchitecture.md)
 
 ## Other Tips
   - [Dotfiles](./otherTips/dotfiles.md)
