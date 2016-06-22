@@ -1,7 +1,7 @@
 In order to set up a microservice, first create new databases in your local mysql instance.
 For instance, if I wanted user-service and uaa-service, I would create sh_user and sh_uaa in mysql:
 
-'''
+'''bash
 mysql -u root p
 CREATE DATABASE sh_user;
 CREATE DATABASE sh_uaa;
@@ -13,14 +13,14 @@ You can get instructions for either on https://www.rabbitmq.com/download.html
 
 Once done installing homebrew, navigate to /usr/local/sbin and type:
 
-'''
+'''bash
 open rabbitmq-server
 '''
 
 Before running microservices, make sure to go to their respective application.properties files.
 For user microservice, that would be in sh_repo/applications/webApps/microservices/services/user-service/src/main/resources/application.properties
 Change the rabbitmq.host to localhost and rabbitmq.port to 5672.
-'''
+'''bash
 rabbitmq.host=localhost
 rabbitmq.port=5672
 '''
