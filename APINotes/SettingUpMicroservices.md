@@ -1,7 +1,7 @@
 In order to set up a microservice, first create new databases in your local mysql instance.
 For instance, if I wanted user-service and uaa-service, I would create sh_user and sh_uaa in mysql:
 
-'''bash
+'''shell
 mysql -u root p
 CREATE DATABASE sh_user;
 CREATE DATABASE sh_uaa;
