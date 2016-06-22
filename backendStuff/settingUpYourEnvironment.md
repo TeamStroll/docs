@@ -8,10 +8,7 @@
 
 ## To Test if the Connection is Working
 
-`curl "http://localhost:9090/sh/payers"\ 
--X "GET" "MediaType: application/vnd.sh-v1.0+json"\
--H "apikey: thisisdummyapikeysignature"\
--H "content-type:application/json"`
+`curl "http://localhost:9090/sh/payers" -X "GET" "MediaType: application/vnd.sh-v1.0+json" -H "apikey: thisisdummyapikeysignature" -H "content-type:application/json"`
 
 ## GC Memory Limit?
 

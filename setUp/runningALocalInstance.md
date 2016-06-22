@@ -12,4 +12,5 @@ If working on the front end
 5. Run `npm start`, this needs to be done in a separate terminal tab/window. Running this command will start a the node server serving the frontend content.  On the react app this will also run a webpack build process before it starts the server.
 6. Navigate to `localhost:9080` on your browser.
 7. Open a new terminal tab or window and run `webpack --watch` this will keep your bundle.js and styles.css current as you change them.
+7. Open another new terminal tab or window and run `npm run test:dev` this will start the testing software and run all the tests for the file you are working as you change the file, ie. when you save, and display the full output of the test.
 8. Code!
