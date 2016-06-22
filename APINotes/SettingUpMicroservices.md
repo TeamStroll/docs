@@ -22,12 +22,12 @@ open rabbitmq-server
 Before running microservices, make sure to go to their respective application.properties files.
 For user microservice, that would be in sh_repo/applications/webApps/microservices/services/user-service/src/main/resources/application.properties
 Change the rabbitmq.host to localhost and rabbitmq.port to 5672.
-```bash
+```
 rabbitmq.host=localhost
 rabbitmq.port=5672
 ```
 You also need to change your spring.datasource.password to your own password.
 And finally, change your datasource.url. For my user service application.properties file, I would have:
-```bash
+```
 jdbc:mysql://localhost:3306/sh_user?autoReconnect=true&amp;createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8
 ```
