@@ -5,6 +5,9 @@
     - [ECMAScript 5](./styleGuides/JavaScriptES5.md)
   - [React/JSX](./styleGuides/ReactJSX.md)
   - [CSS/Sass](./styleGuides/CSSSass.md)
+  - [Linters](./styleGuides/linters.md)
+    - [ES Linter config](./styleguides/linters/eslintrc)
+    - [Sass Linter config](./styleguides/linters/sass-lint.yml)
 
 ## React
   - [React](./react/react.md)

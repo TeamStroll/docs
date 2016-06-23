@@ -14,6 +14,6 @@ To install sass-lint:
 
 `npm install -g sass-lint`
 
-You will then need to add [`.eslintrc`](./linters/1.eslintrc) and [`.sass-lint.yml`](./linters/1.sass-lint.yml) to your dotfiles.
+You will then need to add [`.eslintrc`](./linters/eslintrc) and [`.sass-lint.yml`](./linters/sass-lint.yml) to your dotfiles.
 
 You'll also probably need to install the plugins for these on your IDE.
