@@ -1,0 +1,140 @@
+---
+  env:
+    browser: true
+    node: true
+    jquery: true
+    mocha: true
+    jasmine: true
+    jest: true
+  ecmaFeatures:
+    jsx: true
+  globals:
+    _: false
+    EventEmitter: false
+    Flux: false
+    React: false
+    ReactRouter: false
+  rules:
+    array-bracket-spacing: [ "warn", "always", { "singleValue": false } ]
+    array-callback-return: 1
+    block-spacing: 1
+    brace-style: [ "error", "1tbs", { "allowSingleLine": true } ]
+    camelcase:
+      - 1
+      - properties: never
+    comma-dangle: ["warn", "never"]
+    comma-spacing: ["warn", { "before": false, "after": true }]
+    comma-style: ["warn", "last"]
+    consistent-this: ["error", "that"]
+    curly:  "warn"
+    dot-location: [1, "property"]
+    dot-notation: [2, { "allowKeywords": false, "allowPattern": "^[a-z]+(_[a-z]+)+$" }]
+    eol: ["warn", "unix"]
+    eqeqeq: 1
+    "id-match": ["warn", "^[a-z]+([A-Z][a-z]+)*$"]
+    indent: ["warn", 2, { "SwitchCase": 1 }]
+    guard-for-in: 1
+    jsx-quotes: ["warn", "prefer-double"]
+    key-spacing: 1
+    keyword-spacing: ["error", { "before": true, "after": true }]
+    linebreak-style: ["error", "unix"]
+    max-len: ["warn", 80, 4, { "ignoreTrailingComments": true, "ignoreUrls": true, "ignorePattern": true }]
+    max-depth: ["warn", 4]
+    max-statements-per-line: ["error", { "max": 1 }]
+    newline-after-var: ["error", "always"]
+    newline-before-return: "error"
+    newline-per-chained-call: ["error", { "ignoreChainWithDepth": 3  }]
+    no-alert: 0
+    no-array-constructor: "error"
+    no-catch-shadow: 1
+    no-cond-assign: 2
+    no-console: 0
+    no-constant-condition: 1
+    no-control-regex: 2
+    no-debugger: 1
+    no-delete-var: 1
+    no-dupe-args: 2
+    no-dupe-keys: 2
+    no-duplicate-case: 2
+    no-else-return: 0
+    no-empty-character-class: 2
+    no-empty: 1
+    no-eq-null: 1
+    no-eval: 1
+    no-ex-assign: 2
+    no-extend-native: 0
+    no-extra-bind: 1
+    no-extra-boolean-cast: 2
+    no-extra-parens: 0
+    no-extra-semi: 2
+    no-fallthrough: 1
+    no-floating-decimal: 1
+    no-func-assign: 2
+    no-implicit-coercion: 1
+    no-implied-eval: 1
+    no-inner-declarations: 2
+    no-invalid-regexp: 1
+    no-invalid-this: 1
+    no-irregular-whitespace: [2, {'skipStrings': true, 'skipRegExps': true}]
+    no-label-var: 2
+    no-lone-blocks: 1
+    no-lonely-if: "error"
+    no-loop-func: 1
+    no-magic-numbers: 1
+    no-mixed-spaces-and-tabs: "error"
+    no-multi-spaces: 1
+    no-multiple-empty-lines: "error"
+    no-nested-ternary: "error"
+    no-new-object: "error"
+    no-native-reassign: 1
+    no-negated-in-lhs: 2
+    no-obj-calls: 2
+    no-octal: 1
+    no-param-reassign: 0
+    no-proto: 2
+    no-prototype-builtins: 2
+    no-redeclare: 1
+    no-regex-spaces: 2
+    no-return-assign: 2
+    no-self-assign: 2
+    no-self-compare: 2
+    no-sequences: 1
+    no-shadow-restricted-names: 2
+    no-shadow: 2
+    no-sparse-arrays: 2
+    no-trailing-spaces: "error"
+    no-undef: 2
+    no-undefined: 0
+    no-unexpected-multiline: 1
+    no-unreachable: 2
+    no-unsafe-finally: 2
+    no-unused-expressions: 1
+    no-unused-vars: 1
+    no-use-before-define: 0
+    no-useless-call: 1
+    no-warning-comments: 1
+    no-whitespace-before-property: "error"
+    no-with: 2
+    object-curly-newline: ["error", {"multiline": true}]
+    object-curly-spacing: ["error", "always"]
+    object-property-newline: ["error", { "allowMultiplePropertiesPerLine": true }]
+    operator-assignment: ["error", "always"]
+    operator-linebreak: ["error", "after"]
+    quote-props: ["error", "as-needed"]
+    quotes: [1, "double", {"avoidEscape": true, "allowTemplateLiterals": true}]
+    radix: 1
+    semi:
+      - 2
+      - always
+    semi-spacing: ["error", {"before": false, "after": true}]
+    space-before-function-paren: "error"
+    space-in-parens: ["error", "never"]
+    space-infix-ops: ["error", {"int32Hint": false}]
+    space-unary-ops: [2, {"words": true, "nonwords": false, "overrides": {"new": false, "++": true}}]
+    spaced-comment: ["error", "always"]
+    strict: 0
+    use-isnan: 2
+    valid-typeof: 2
+    vars-on-top: 1
+    wrap-iife: 0
+    yoda: 0
