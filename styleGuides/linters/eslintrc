@@ -15,37 +15,37 @@
     React: false
     ReactRouter: false
   rules:
-    array-bracket-spacing: [ "warn", "always", { "singleValue": false } ]
+    array-bracket-spacing: [ 1, "always", { "singleValue": false } ]
     array-callback-return: 1
     block-spacing: 1
-    brace-style: [ "error", "1tbs", { "allowSingleLine": true } ]
+    brace-style: [ 2, "1tbs", { "allowSingleLine": true } ]
     camelcase:
       - 1
       - properties: never
-    comma-dangle: ["warn", "never"]
-    comma-spacing: ["warn", { "before": false, "after": true }]
-    comma-style: ["warn", "last"]
-    consistent-this: ["error", "that"]
-    curly:  "warn"
+    comma-dangle: [1, "never"]
+    comma-spacing: [1, { "before": false, "after": true }]
+    comma-style: [1, "last"]
+    consistent-this: [2, "that"]
+    curly:  1
     dot-location: [1, "property"]
     dot-notation: [2, { "allowKeywords": false, "allowPattern": "^[a-z]+(_[a-z]+)+$" }]
-    eol: ["warn", "unix"]
+    eol: [1, "unix"]
     eqeqeq: 1
-    "id-match": ["warn", "^[a-z]+([A-Z][a-z]+)*$"]
-    indent: ["warn", 2, { "SwitchCase": 1 }]
+    "id-match": [1, "^[a-z]+([A-Z][a-z]+)*$"]
+    indent: [1, 2, { "SwitchCase": 1 }]
     guard-for-in: 1
-    jsx-quotes: ["warn", "prefer-double"]
+    jsx-quotes: [1, "prefer-double"]
     key-spacing: 1
-    keyword-spacing: ["error", { "before": true, "after": true }]
-    linebreak-style: ["error", "unix"]
-    max-len: ["warn", 80, 4, { "ignoreTrailingComments": true, "ignoreUrls": true, "ignorePattern": true }]
-    max-depth: ["warn", 4]
-    max-statements-per-line: ["error", { "max": 1 }]
-    newline-after-var: ["error", "always"]
-    newline-before-return: "error"
-    newline-per-chained-call: ["error", { "ignoreChainWithDepth": 3  }]
+    keyword-spacing: [2, { "before": true, "after": true }]
+    linebreak-style: [2, "unix"]
+    max-len: [1, 80, 2, { "ignoreUrls": true }]
+    max-depth: [1, 4]
+    max-statements-per-line: [2, { "max": 1 }]
+    newline-after-var: [2, "always"]
+    newline-before-return: 2
+    newline-per-chained-call: [2, { "ignoreChainWithDepth": 3  }]
     no-alert: 0
-    no-array-constructor: "error"
+    no-array-constructor: 2
     no-catch-shadow: 1
     no-cond-assign: 2
     no-console: 0
@@ -75,17 +75,17 @@
     no-inner-declarations: 2
     no-invalid-regexp: 1
     no-invalid-this: 1
-    no-irregular-whitespace: [2, {'skipStrings': true, 'skipRegExps': true}]
+    no-irregular-whitespace: 2
     no-label-var: 2
     no-lone-blocks: 1
-    no-lonely-if: "error"
+    no-lonely-if: 2
     no-loop-func: 1
     no-magic-numbers: 1
-    no-mixed-spaces-and-tabs: "error"
+    no-mixed-spaces-and-tabs: 2
     no-multi-spaces: 1
-    no-multiple-empty-lines: "error"
-    no-nested-ternary: "error"
-    no-new-object: "error"
+    no-multiple-empty-lines: 2
+    no-nested-ternary: 2
+    no-new-object: 2
     no-native-reassign: 1
     no-negated-in-lhs: 2
     no-obj-calls: 2
@@ -102,7 +102,7 @@
     no-shadow-restricted-names: 2
     no-shadow: 2
     no-sparse-arrays: 2
-    no-trailing-spaces: "error"
+    no-trailing-spaces: 2
     no-undef: 2
     no-undefined: 0
     no-unexpected-multiline: 1
@@ -113,25 +113,23 @@
     no-use-before-define: 0
     no-useless-call: 1
     no-warning-comments: 1
-    no-whitespace-before-property: "error"
+    no-whitespace-before-property: 2
     no-with: 2
-    object-curly-newline: ["error", {"multiline": true}]
-    object-curly-spacing: ["error", "always"]
-    object-property-newline: ["error", { "allowMultiplePropertiesPerLine": true }]
-    operator-assignment: ["error", "always"]
-    operator-linebreak: ["error", "after"]
-    quote-props: ["error", "as-needed"]
-    quotes: [1, "double", {"avoidEscape": true, "allowTemplateLiterals": true}]
-    radix: 1
+    object-curly-newline: [2, {"multiline": true}]
+    object-curly-spacing: [2, "always"]
+    object-property-newline: [2, { "allowMultiplePropertiesPerLine": true }]
+    operator-assignment: [2, "always"]
+    operator-linebreak: [2, "after"]
+    quote-props: [2, "as-needed"]
+    quotes: [1, "double"]
     semi:
       - 2
       - always
-    semi-spacing: ["error", {"before": false, "after": true}]
-    space-before-function-paren: "error"
-    space-in-parens: ["error", "never"]
-    space-infix-ops: ["error", {"int32Hint": false}]
-    space-unary-ops: [2, {"words": true, "nonwords": false, "overrides": {"new": false, "++": true}}]
-    spaced-comment: ["error", "always"]
+    semi-spacing: [2, {"before": false, "after": true}]
+    space-before-function-paren: 2
+    space-in-parens: [2, "never"]
+    space-infix-ops: [2, {"int32Hint": false}]
+    spaced-comment: [2, "always"]
     strict: 0
     use-isnan: 2
     valid-typeof: 2
