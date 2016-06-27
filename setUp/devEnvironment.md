@@ -43,6 +43,8 @@ If Windows, download the installer and reinstall...
 
 You will probably want to install webpack globally.  This can be done using `npm`.  Simply run the following command: `npm install webpack -g`
 
+A small dependency for browser compatability, browserslist, should also be installed: `npm install browserslist -g`
+
 ## Install Java
 
 Type install [Java](https://java.com/en/download/help/index_installing.xml) into google, and install it.
