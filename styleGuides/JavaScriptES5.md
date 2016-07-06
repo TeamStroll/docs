@@ -786,6 +786,8 @@
     };
     ```
 
+    ![alt text](http://imgs.xkcd.com/comics/(.png "Parenthesis")
+
   - Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.).
 
     ```javascript
