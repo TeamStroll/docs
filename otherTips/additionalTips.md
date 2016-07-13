@@ -14,4 +14,8 @@ It is much better than the default terminal.
 
 Changes to the codebase, will in all likelihood break someone's workflow.
 
-![alt text](http://imgs.xkcd.com/comics/workflow.png "People use things in unexpected wats")
+![alt text](http://imgs.xkcd.com/comics/workflow.png "People use things in unexpected ways")
+
+## Chrome Dev Tools Blackboxing
+
+You can blackbox library code in the chrome inspector.  This will allow you to avoid going into libraries when tracing a bug.  See [here](https://developer.chrome.com/devtools/docs/blackboxing).
