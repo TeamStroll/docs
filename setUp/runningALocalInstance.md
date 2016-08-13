@@ -14,3 +14,4 @@ If working on the front end
 7. Open a new terminal tab or window and run `webpack --watch` this will keep your bundle.js and styles.css current as you change them.
 7. Open another new terminal tab or window and run `npm run test:dev` this will start the testing software and run all the tests for the file you are working as you change the file, ie. when you save, and display the full output of the test.
 8. Code!
+9. You will probably want to run ` find . -name "*.hot-update.*" -type f -delete` to clean up hot-updates.
