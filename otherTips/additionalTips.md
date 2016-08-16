@@ -19,3 +19,7 @@ Changes to the codebase, will in all likelihood break someone's workflow.
 ## Chrome Dev Tools Blackboxing
 
 You can blackbox library code in the chrome inspector.  This will allow you to avoid going into libraries when tracing a bug.  See [here](https://developer.chrome.com/devtools/docs/blackboxing).
+
+## Code Reviews
+
+[How to code review.](https://www.youtube.com/watch?v=PJjmw9TRB7s)
