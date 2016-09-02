@@ -23,3 +23,5 @@ You can blackbox library code in the chrome inspector.  This will allow you to a
 ## Code Reviews
 
 [How to code review.](https://www.youtube.com/watch?v=PJjmw9TRB7s)
+
+[Little Known DOM Features](https://www.youtube.com/watch?v=8Vod1rzJ72g)
