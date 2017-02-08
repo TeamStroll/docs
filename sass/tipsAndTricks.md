@@ -41,12 +41,12 @@
 
   .image-one {
     @extend %bg-image;
-    background-image:url(/img/image-one.jpg");
+    background-image:url("/img/image-one.jpg");
   }
 
   .image-two {
     @extend %bg-image;
-    background-image:url(/img/image-two.jpg");
+    background-image:url("/img/image-two.jpg");
   }
 ```
 
