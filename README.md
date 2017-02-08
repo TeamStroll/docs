@@ -16,6 +16,7 @@
   - [Some Packages We Use](./react/somePackagesWeUse.md)
   
 ## Sass
+  - [Sass Tips and Tricks](./sass/tipsAndTricks.md)
   - [The & Symbol](https://css-tricks.com/the-sass-ampersand/)
 
 ## NPM
