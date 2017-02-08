@@ -60,11 +60,11 @@
   }
 
   .image-one {
-    background-image:url(/img/image-one.jpg") ;
+    background-image:url(/img/image-one.jpg");
   }
 
   .image-two {
-    background-image:url(/img/image-two.jpg") ;
+    background-image:url(/img/image-two.jpg");
   }
 ```
   As we can see, the written Sass is significantly reduced and more effective at conveying the intended structure, and is more reusable.
