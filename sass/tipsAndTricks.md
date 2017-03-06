@@ -75,7 +75,7 @@
  
 ## Ampersand
  
-  These are really power full and offfer some unique effects.  First, they can be used to nest pseudo-selectors.  Second, you are able to nest modifiers!
+  These are really power full and offer some unique effects.  First, they can be used to nest pseudo-selectors.  Second, you are able to nest modifiers!
   
 ```css
   .weather {
