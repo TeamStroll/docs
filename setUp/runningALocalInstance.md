@@ -14,7 +14,7 @@ Assuming you have setup your development environment the following steps should 
 8. As tests develop `npm run test:dev` will start the testing software and run all the tests for the file you are working on as you change the file.
 9. Code
 
-** Manual Way **
+**Manual Way**
 1. Run `cd [path to wherever you put what you are working on]`.
 2. Run `git checkout origin Demo`, this is the main branch you will be working from.
 3. Run `npm install` or `npm i`, this will install all the required dependencies in `package.json`.
