@@ -1129,6 +1129,8 @@
 
 ## Naming Conventions
 
+![alt_text](http://www.commitstrip.com/wp-content/uploads/2013/04/Strip-Nom-de-variable-550-finalenglish1.jpg "Name your variables")
+
   - Avoid single letter names. Be descriptive with your naming. Note: During minification, these will be shortened for production via [UglifyJS](https://github.com/mishoo/UglifyJS2)
 
     ```javascript
