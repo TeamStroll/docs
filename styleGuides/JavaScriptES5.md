@@ -320,6 +320,8 @@
 
 **[⬆ back to top](#table-of-contents)**
 
+![alt_text](http://www.commitstrip.com/wp-content/uploads/2013/04/Strip-Nom-de-variable-550-finalenglish1.jpg "Name your variables")
+
 ## Variables
 
   - Always use `var` to declare variables (we can't use `const` due to IE not supporting it).  Not doing so will result in global variables.  We want to avoid poluting the global namespace.  Remember what Captain Planet warned us about.
